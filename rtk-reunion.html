@@ -22,85 +22,92 @@
             position: relative;
         }
 
-        /* Background graphical elements */
-        .bg-elements {
-            position: fixed;
+        /* Section-specific background elements */
+        .section-bg {
+            position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
+            right: 0;
+            bottom: 0;
             pointer-events: none;
             z-index: 0;
             overflow: hidden;
+            border-radius: 20px;
         }
 
-        .bg-element {
+        .section-bg-element {
             position: absolute;
-            opacity: 0.08;
+            opacity: 0.05;
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
-            animation: floatElement 15s ease-in-out infinite;
+            animation: floatElement 20s ease-in-out infinite;
         }
 
-        .bg-element-1 {
+        /* Header background element */
+        header .section-bg-element {
             width: 120px;
             height: 120px;
-            top: 10%;
-            left: 5%;
+            top: 20%;
+            right: 10%;
             background-image: url('element-1.jpg');
             animation-delay: 0s;
         }
 
-        .bg-element-2 {
+        /* Welcome section background element */
+        .welcome-section .section-bg-element {
             width: 100px;
             height: 100px;
-            top: 20%;
-            right: 10%;
+            top: 30%;
+            left: 5%;
             background-image: url('element-2.jpg');
             animation-delay: 3s;
         }
 
-        .bg-element-3 {
-            width: 140px;
-            height: 140px;
-            top: 60%;
-            left: 8%;
+        /* Program section background element */
+        .program-section-container .section-bg-element {
+            width: 110px;
+            height: 110px;
+            bottom: 20%;
+            right: 8%;
             background-image: url('element-3.jpg');
             animation-delay: 6s;
         }
 
-        .bg-element-4 {
-            width: 90px;
-            height: 90px;
-            top: 40%;
-            right: 15%;
+        /* Homework section background element */
+        .homework-section-container .section-bg-element {
+            width: 95px;
+            height: 95px;
+            top: 25%;
+            left: 8%;
             background-image: url('element-4.jpg');
             animation-delay: 9s;
         }
 
-        .bg-element-5 {
-            width: 110px;
-            height: 110px;
-            top: 80%;
-            left: 50%;
+        /* Pricing section background element */
+        .pricing-section-container .section-bg-element {
+            width: 105px;
+            height: 105px;
+            top: 40%;
+            right: 12%;
             background-image: url('element-5.jpg');
             animation-delay: 12s;
         }
 
-        .bg-element-6 {
-            width: 130px;
-            height: 130px;
-            top: 30%;
-            left: 70%;
+        /* Important info section background element */
+        .info-section-container .section-bg-element {
+            width: 115px;
+            height: 115px;
+            bottom: 15%;
+            left: 10%;
             background-image: url('element-6.jpg');
             animation-delay: 2s;
         }
 
         @keyframes floatElement {
             0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
-            33% { transform: translate(20px, -15px) rotate(2deg) scale(1.05); }
-            66% { transform: translate(-15px, 10px) rotate(-1deg) scale(0.95); }
+            33% { transform: translate(15px, -10px) rotate(1deg) scale(1.03); }
+            66% { transform: translate(-10px, 8px) rotate(-0.5deg) scale(0.97); }
         }
 
         .container {
@@ -614,8 +621,8 @@
                 font-size: 0.9rem;
             }
 
-            /* Hide some background elements on mobile for performance */
-            .bg-element-4, .bg-element-5, .bg-element-6 {
+            /* Hide section background elements on mobile for performance */
+            .section-bg-element {
                 display: none;
             }
         }
@@ -696,18 +703,11 @@
         <div class="scroll-progress" id="scrollProgress"></div>
     </div>
 
-    <!-- Background graphical elements -->
-    <div class="bg-elements">
-        <div class="bg-element bg-element-1"></div>
-        <div class="bg-element bg-element-2"></div>
-        <div class="bg-element bg-element-3"></div>
-        <div class="bg-element bg-element-4"></div>
-        <div class="bg-element bg-element-5"></div>
-        <div class="bg-element bg-element-6"></div>
-    </div>
-
     <div class="container">
         <header>
+            <div class="section-bg">
+                <div class="section-bg-element"></div>
+            </div>
             <div class="header-logo-container">
                 <img src="rtk-logo.png" alt="RTK Logo" class="logo-large">
             </div>
@@ -716,7 +716,10 @@
             <div class="date-highlight">17. oktobris 2025</div>
         </header>
 
-        <div class="info-section">
+        <div class="info-section welcome-section">
+            <div class="section-bg">
+                <div class="section-bg-element"></div>
+            </div>
             <div class="welcome-text">
                 2025. gada 17. oktobrī koledža svin 90 gadu jubileju un sadarbībā ar nodibinājumu "Rīgas Tehniskās koledžas atbalsta fonds" rīko absolventu salidojumu.
             </div>
@@ -734,7 +737,10 @@
             </div>
         </div>
 
-        <div class="info-section">
+        <div class="info-section program-section-container">
+            <div class="section-bg">
+                <div class="section-bg-element"></div>
+            </div>
             <div class="program-section">
                 <h2 class="program-title">
                     <img src="rtk-logo.png" alt="RTK Logo" class="logo-small">
@@ -776,7 +782,10 @@
             </div>
         </div>
 
-        <div class="info-section">
+        <div class="info-section homework-section-container">
+            <div class="section-bg">
+                <div class="section-bg-element"></div>
+            </div>
             <div class="homework-section">
                 <h3 class="homework-title">
                     <img src="rtk-logo.png" alt="RTK Logo" class="logo-small">
@@ -793,7 +802,10 @@
             </div>
         </div>
 
-        <div class="info-section">
+        <div class="info-section pricing-section-container">
+            <div class="section-bg">
+                <div class="section-bg-element"></div>
+            </div>
             <h2 class="section-title">
                 <img src="rtk-logo.png" alt="RTK Logo" class="logo">
                 Biļešu cenas
@@ -827,7 +839,10 @@
             </div>
         </div>
 
-        <div class="info-section">
+        <div class="info-section info-section-container">
+            <div class="section-bg">
+                <div class="section-bg-element"></div>
+            </div>
             <div class="important-info">
                 <h2 class="section-title">
                     <img src="rtk-logo.png" alt="RTK Logo" class="logo">
