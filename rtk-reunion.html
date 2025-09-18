@@ -22,7 +22,88 @@
             position: relative;
         }
 
-        /* Section-specific background elements */
+        /* Small floating background elements for entire page */
+        .bg-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .bg-element {
+            position: absolute;
+            opacity: 0.06;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            animation: floatElement 15s ease-in-out infinite;
+        }
+
+        .bg-element-1 {
+            width: 80px;
+            height: 80px;
+            top: 15%;
+            left: 8%;
+            background-image: url('element-1.jpg');
+            animation-delay: 0s;
+        }
+
+        .bg-element-2 {
+            width: 70px;
+            height: 70px;
+            top: 25%;
+            right: 12%;
+            background-image: url('element-2.jpg');
+            animation-delay: 3s;
+        }
+
+        .bg-element-3 {
+            width: 90px;
+            height: 90px;
+            top: 65%;
+            left: 10%;
+            background-image: url('element-3.jpg');
+            animation-delay: 6s;
+        }
+
+        .bg-element-4 {
+            width: 75px;
+            height: 75px;
+            top: 45%;
+            right: 18%;
+            background-image: url('element-4.jpg');
+            animation-delay: 9s;
+        }
+
+        .bg-element-5 {
+            width: 85px;
+            height: 85px;
+            top: 35%;
+            left: 50%;
+            background-image: url('element-5.jpg');
+            animation-delay: 12s;
+        }
+
+        .bg-element-6 {
+            width: 95px;
+            height: 95px;
+            top: 55%;
+            right: 8%;
+            background-image: url('element-6.jpg');
+            animation-delay: 2s;
+        }
+
+        @keyframes floatElement {
+            0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+            33% { transform: translate(15px, -10px) rotate(1deg) scale(1.05); }
+            66% { transform: translate(-10px, 8px) rotate(-1deg) scale(0.95); }
+        }
+
+        /* Large section background elements */
         .section-bg {
             position: absolute;
             top: 0;
@@ -37,77 +118,76 @@
 
         .section-bg-element {
             position: absolute;
-            opacity: 0.05;
+            opacity: 0.03;
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
-            animation: floatElement 20s ease-in-out infinite;
+            animation: floatElementSlow 25s ease-in-out infinite;
         }
 
-        /* Header background element */
-        header .section-bg-element {
-            width: 120px;
-            height: 120px;
-            top: 20%;
-            right: 10%;
+        /* Header large background element */
+        .header-bg .section-bg-element {
+            width: 200px;
+            height: 200px;
+            top: 10%;
+            right: 5%;
             background-image: url('element-1.jpg');
             animation-delay: 0s;
         }
 
-        /* Welcome section background element */
-        .welcome-section .section-bg-element {
-            width: 100px;
-            height: 100px;
-            top: 30%;
+        /* Welcome section large background element */
+        .welcome-bg .section-bg-element {
+            width: 180px;
+            height: 180px;
+            top: 20%;
             left: 5%;
             background-image: url('element-2.jpg');
+            animation-delay: 5s;
+        }
+
+        /* Program section large background element */
+        .program-bg .section-bg-element {
+            width: 220px;
+            height: 220px;
+            bottom: 10%;
+            right: 5%;
+            background-image: url('element-3.jpg');
+            animation-delay: 10s;
+        }
+
+        /* Homework section large background element */
+        .homework-bg .section-bg-element {
+            width: 190px;
+            height: 190px;
+            top: 15%;
+            left: 5%;
+            background-image: url('element-4.jpg');
+            animation-delay: 15s;
+        }
+
+        /* Pricing section large background element */
+        .pricing-bg .section-bg-element {
+            width: 210px;
+            height: 210px;
+            top: 30%;
+            right: 5%;
+            background-image: url('element-5.jpg');
+            animation-delay: 20s;
+        }
+
+        /* Important info section large background element */
+        .info-bg .section-bg-element {
+            width: 230px;
+            height: 230px;
+            bottom: 10%;
+            left: 5%;
+            background-image: url('element-6.jpg');
             animation-delay: 3s;
         }
 
-        /* Program section background element */
-        .program-section-container .section-bg-element {
-            width: 110px;
-            height: 110px;
-            bottom: 20%;
-            right: 8%;
-            background-image: url('element-3.jpg');
-            animation-delay: 6s;
-        }
-
-        /* Homework section background element */
-        .homework-section-container .section-bg-element {
-            width: 95px;
-            height: 95px;
-            top: 25%;
-            left: 8%;
-            background-image: url('element-4.jpg');
-            animation-delay: 9s;
-        }
-
-        /* Pricing section background element */
-        .pricing-section-container .section-bg-element {
-            width: 105px;
-            height: 105px;
-            top: 40%;
-            right: 12%;
-            background-image: url('element-5.jpg');
-            animation-delay: 12s;
-        }
-
-        /* Important info section background element */
-        .info-section-container .section-bg-element {
-            width: 115px;
-            height: 115px;
-            bottom: 15%;
-            left: 10%;
-            background-image: url('element-6.jpg');
-            animation-delay: 2s;
-        }
-
-        @keyframes floatElement {
+        @keyframes floatElementSlow {
             0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
-            33% { transform: translate(15px, -10px) rotate(1deg) scale(1.03); }
-            66% { transform: translate(-10px, 8px) rotate(-0.5deg) scale(0.97); }
+            50% { transform: translate(10px, -5px) rotate(0.5deg) scale(1.02); }
         }
 
         .container {
@@ -621,7 +701,10 @@
                 font-size: 0.9rem;
             }
 
-            /* Hide section background elements on mobile for performance */
+            /* Hide background elements on mobile for performance */
+            .bg-elements {
+                display: none;
+            }
             .section-bg-element {
                 display: none;
             }
@@ -703,9 +786,24 @@
         <div class="scroll-progress" id="scrollProgress"></div>
     </div>
 
+<body>
+    <div class="scroll-indicator">
+        <div class="scroll-progress" id="scrollProgress"></div>
+    </div>
+
+    <!-- Small floating background elements for entire page -->
+    <div class="bg-elements">
+        <div class="bg-element bg-element-1"></div>
+        <div class="bg-element bg-element-2"></div>
+        <div class="bg-element bg-element-3"></div>
+        <div class="bg-element bg-element-4"></div>
+        <div class="bg-element bg-element-5"></div>
+        <div class="bg-element bg-element-6"></div>
+    </div>
+
     <div class="container">
         <header>
-            <div class="section-bg">
+            <div class="section-bg header-bg">
                 <div class="section-bg-element"></div>
             </div>
             <div class="header-logo-container">
@@ -716,8 +814,8 @@
             <div class="date-highlight">17. oktobris 2025</div>
         </header>
 
-        <div class="info-section welcome-section">
-            <div class="section-bg">
+        <div class="info-section">
+            <div class="section-bg welcome-bg">
                 <div class="section-bg-element"></div>
             </div>
             <div class="welcome-text">
@@ -737,8 +835,8 @@
             </div>
         </div>
 
-        <div class="info-section program-section-container">
-            <div class="section-bg">
+        <div class="info-section">
+            <div class="section-bg program-bg">
                 <div class="section-bg-element"></div>
             </div>
             <div class="program-section">
@@ -782,8 +880,8 @@
             </div>
         </div>
 
-        <div class="info-section homework-section-container">
-            <div class="section-bg">
+        <div class="info-section">
+            <div class="section-bg homework-bg">
                 <div class="section-bg-element"></div>
             </div>
             <div class="homework-section">
@@ -802,8 +900,8 @@
             </div>
         </div>
 
-        <div class="info-section pricing-section-container">
-            <div class="section-bg">
+        <div class="info-section">
+            <div class="section-bg pricing-bg">
                 <div class="section-bg-element"></div>
             </div>
             <h2 class="section-title">
@@ -839,8 +937,8 @@
             </div>
         </div>
 
-        <div class="info-section info-section-container">
-            <div class="section-bg">
+        <div class="info-section">
+            <div class="section-bg info-bg">
                 <div class="section-bg-element"></div>
             </div>
             <div class="important-info">
