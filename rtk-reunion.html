@@ -103,93 +103,6 @@
             66% { transform: translate(-10px, 8px) rotate(-1deg) scale(0.95); }
         }
 
-        /* Large section background elements */
-        .section-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            pointer-events: none;
-            z-index: 0;
-            overflow: hidden;
-            border-radius: 20px;
-        }
-
-        .section-bg-element {
-            position: absolute;
-            opacity: 0.03;
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            animation: floatElementSlow 25s ease-in-out infinite;
-        }
-
-        /* Header large background element */
-        .header-bg .section-bg-element {
-            width: 200px;
-            height: 200px;
-            top: 10%;
-            right: 5%;
-            background-image: url('element-1.jpg');
-            animation-delay: 0s;
-        }
-
-        /* Welcome section large background element */
-        .welcome-bg .section-bg-element {
-            width: 180px;
-            height: 180px;
-            top: 20%;
-            left: 5%;
-            background-image: url('element-2.jpg');
-            animation-delay: 5s;
-        }
-
-        /* Program section large background element */
-        .program-bg .section-bg-element {
-            width: 220px;
-            height: 220px;
-            bottom: 10%;
-            right: 5%;
-            background-image: url('element-3.jpg');
-            animation-delay: 10s;
-        }
-
-        /* Homework section large background element */
-        .homework-bg .section-bg-element {
-            width: 190px;
-            height: 190px;
-            top: 15%;
-            left: 5%;
-            background-image: url('element-4.jpg');
-            animation-delay: 15s;
-        }
-
-        /* Pricing section large background element */
-        .pricing-bg .section-bg-element {
-            width: 210px;
-            height: 210px;
-            top: 30%;
-            right: 5%;
-            background-image: url('element-5.jpg');
-            animation-delay: 20s;
-        }
-
-        /* Important info section large background element */
-        .info-bg .section-bg-element {
-            width: 230px;
-            height: 230px;
-            bottom: 10%;
-            left: 5%;
-            background-image: url('element-6.jpg');
-            animation-delay: 3s;
-        }
-
-        @keyframes floatElementSlow {
-            0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
-            50% { transform: translate(10px, -5px) rotate(0.5deg) scale(1.02); }
-        }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -705,9 +618,6 @@
             .bg-elements {
                 display: none;
             }
-            .section-bg-element {
-                display: none;
-            }
         }
 
         /* Extra small mobile phones */
@@ -786,11 +696,6 @@
         <div class="scroll-progress" id="scrollProgress"></div>
     </div>
 
-<body>
-    <div class="scroll-indicator">
-        <div class="scroll-progress" id="scrollProgress"></div>
-    </div>
-
     <!-- Small floating background elements for entire page -->
     <div class="bg-elements">
         <div class="bg-element bg-element-1"></div>
@@ -803,9 +708,6 @@
 
     <div class="container">
         <header>
-            <div class="section-bg header-bg">
-                <div class="section-bg-element"></div>
-            </div>
             <div class="header-logo-container">
                 <img src="rtk-logo.png" alt="RTK Logo" class="logo-large">
             </div>
@@ -815,9 +717,6 @@
         </header>
 
         <div class="info-section">
-            <div class="section-bg welcome-bg">
-                <div class="section-bg-element"></div>
-            </div>
             <div class="welcome-text">
                 2025. gada 17. oktobrī koledža svin 90 gadu jubileju un sadarbībā ar nodibinājumu "Rīgas Tehniskās koledžas atbalsta fonds" rīko absolventu salidojumu.
             </div>
@@ -836,9 +735,6 @@
         </div>
 
         <div class="info-section">
-            <div class="section-bg program-bg">
-                <div class="section-bg-element"></div>
-            </div>
             <div class="program-section">
                 <h2 class="program-title">
                     <img src="rtk-logo.png" alt="RTK Logo" class="logo-small">
@@ -881,9 +777,6 @@
         </div>
 
         <div class="info-section">
-            <div class="section-bg homework-bg">
-                <div class="section-bg-element"></div>
-            </div>
             <div class="homework-section">
                 <h3 class="homework-title">
                     <img src="rtk-logo.png" alt="RTK Logo" class="logo-small">
@@ -901,9 +794,6 @@
         </div>
 
         <div class="info-section">
-            <div class="section-bg pricing-bg">
-                <div class="section-bg-element"></div>
-            </div>
             <h2 class="section-title">
                 <img src="rtk-logo.png" alt="RTK Logo" class="logo">
                 Biļešu cenas
@@ -938,9 +828,6 @@
         </div>
 
         <div class="info-section">
-            <div class="section-bg info-bg">
-                <div class="section-bg-element"></div>
-            </div>
             <div class="important-info">
                 <h2 class="section-title">
                     <img src="rtk-logo.png" alt="RTK Logo" class="logo">
