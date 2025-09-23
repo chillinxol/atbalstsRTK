@@ -289,6 +289,33 @@
             border-radius: 10px;
         }
 
+        .history-additional-images {
+            display: flex;
+            gap: 30px;
+            margin: 30px 0;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .history-image-left {
+            flex: 0 0 672px;
+            max-width: 672px;
+        }
+
+        .history-image-right {
+            flex: 0 0 433px;
+            max-width: 433px;
+        }
+
+        .history-text {
+            font-family: 'Lato', sans-serif;
+            font-size: 1.1rem;
+            color: #01314b;
+            text-align: center;
+            margin: 30px 0 0 0;
+            font-weight: 400;
+        }
+
         .cta-button-blue {
             font-family: 'Lato', sans-serif;
             display: inline-block;
@@ -309,7 +336,7 @@
             box-shadow: 0 10px 25px rgba(102, 156, 188, 0.4);
         }
 
-        /* Program Section with Icons */
+        /* Program Section with Timeline */
         .program-section {
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(10px);
@@ -349,41 +376,54 @@
             flex-shrink: 0;
         }
 
-        .program-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 20px;
-            padding: 25px 20px;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(254, 241, 213, 0.3));
-            border-radius: 15px;
-            transition: all 0.3s ease;
-            border-left: 5px solid #669cbc;
-            box-shadow: 0 4px 15px rgba(102, 156, 188, 0.1);
+        .program-content {
+            position: relative;
+            margin-left: 80px;
         }
 
-        .program-item:hover {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(254, 241, 213, 0.5));
-            transform: translateX(8px);
-            box-shadow: 0 8px 25px rgba(102, 156, 188, 0.2);
+        .program-timeline {
+            position: relative;
+            padding: 20px 0 20px 40px;
         }
 
-        .program-time {
+        .timeline-line {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, #669cbc, #01314b);
+            border-radius: 2px;
+        }
+
+        .program-text {
             font-family: 'Lato', sans-serif;
-            font-weight: 700;
-            font-size: 1.1rem;
-            min-width: 120px;
-            color: #c1111f;
-            flex-shrink: 0;
-        }
-
-        .program-desc {
-            font-family: 'Lato', sans-serif;
-            flex: 1;
             font-size: 1rem;
             color: #01314b;
-            margin-left: 20px;
-            font-weight: 400;
-            line-height: 1.7;
+            line-height: 2;
+            position: relative;
+        }
+
+        .program-text .time {
+            font-weight: 700;
+            color: #c1111f;
+            font-size: 1.1rem;
+            position: relative;
+        }
+
+        .program-text .time::before {
+            content: '';
+            position: absolute;
+            left: -50px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 12px;
+            height: 12px;
+            background: #669cbc;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 2px 8px rgba(102, 156, 188, 0.3);
+            z-index: 2;
         }
 
         /* Homework Section with Icons */
@@ -689,6 +729,40 @@
 
         /* Mobile Optimizations */
         @media (max-width: 768px) {
+            .history-additional-images {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .history-image-left, .history-image-right {
+                flex: none;
+                max-width: 100%;
+            }
+
+            .history-image-left img {
+                height: auto !important;
+            }
+
+            .history-image-right img {
+                height: auto !important;
+            }
+
+            .program-content {
+                margin-left: 0;
+            }
+
+            .program-timeline {
+                padding-left: 30px;
+            }
+
+            .timeline-line {
+                left: 0;
+            }
+
+            .program-text .time::before {
+                left: -40px;
+            }
+
             .hero-content {
                 grid-template-columns: 1fr;
                 gap: 30px;
@@ -708,21 +782,12 @@
                 gap: 15px;
             }
 
-            .program-item, .homework-list li, .info-item {
+            .homework-list li, .info-item {
                 flex-direction: column;
                 padding: 20px 15px;
             }
 
-            .program-time {
-                margin-bottom: 10px;
-                min-width: auto;
-            }
-
-            .program-desc {
-                margin-left: 0;
-            }
-
-            .program-icon, .homework-icon, .info-icon {
+            .homework-icon, .info-icon {
                 margin-right: 0;
                 margin-bottom: 10px;
             }
@@ -769,7 +834,7 @@
                 <div class="hero-text">
                     <h1 class="hero-title">Rīgas Tehniskajai koledžai</h1>
                     <p class="hero-subtitle">2025. gada 17. oktobrī koledža svin 90 gadu jubileju un sadarbībā ar nodibinājumu "Rīgas Tehniskās koledžas atbalsta fonds" rīko absolventu salidojumu.</p>
-                    <p class="hero-subtitle">Aicinām absolventus atgriezties vietā, kur sākās Jūsu profesionālais ceļš, kur tapa idejas, dzima draudzības. Rīgas Tehniskās koledžas nosaukums un struktūra laika gaitā ir mainījušies kā labi ieeļļots mehānisms, kas turpina attīstīties.</p>
+                    <p class="hero-subtitle">Aicinām absolventus atgriezties vietā, kur sākās Jūsu profesionālais ceļš, kur tapa idejas, dzima draudzības. Rīgas Tehniskās koledžas nosaukums un struktūra laika gaitā ir mainījusies kā labi ieeļļots mehānisms, kas turpina attīstīties.</p>
                 </div>
                 <div class="hero-visual">
                     <div class="hero-icons-placeholder">
@@ -797,7 +862,18 @@
             <div class="history-visual-placeholder">
                 <img src="skolu_shema.jpg" alt="Skolu shēma" class="history-image">
             </div>
-            <div style="text-align: center; margin-top: 30px;">
+            <div class="history-additional-images">
+                <div class="history-image-left">
+                    <img src="rtk_prieksa.png" alt="Vēsture 1" style="width: 100%; height: 672px; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="history-image-right">
+                    <img src="rtk_pagalms.png" alt="Vēsture 2" style="width: 100%; height: 433px; object-fit: cover; border-radius: 10px;">
+                </div>
+            </div>
+            <div class="history-text">
+                Iepazīsties ar Rīgas Tehniskās koledžas vēsturi šeit:
+            </div>
+            <div style="text-align: center; margin-top: 20px;">
                 <a href="https://www.rtk.lv/lv/par-mums/vesture-un-himna/" class="cta-button-blue">SKOLAS VĒSTURE</a>
             </div>
         </div>
@@ -809,37 +885,31 @@
                 Programma
             </h2>
             
-            <div class="program-item">
-                <div class="program-icon">ICON</div>
-                <div class="program-time">15:00 – 18:00</div>
-                <div class="program-desc">
-                    <strong>BEZMAKSAS ieeja</strong>, ekskursijas pa abām mājām - pieteikšanās atsevišķi, aizpildot anketu:<br>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScqs0udPfhgbpAV6DWzXlZjPEUjt0y_Ji_D6VZBer3g-zzJkA/viewform" class="cta-button" style="margin: 10px 0; display: inline-block;">ej.uz/rtk-90-ekskursijas</a>
+            <div class="program-content">
+                <div class="program-timeline">
+                    <div class="timeline-line"></div>
+                    <div class="program-text">
+                        <div class="time">15:00–18:00</div>
+                        <strong>BEZMAKSAS ieeja</strong>, ekskursijas pa abām mājām - pieteikšanās atsevišķi, aizpildot anketu:
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScqs0udPfhgbpAV6DWzXlZjPEUjt0y_Ji_D6VZBer3g-zzJkA/viewform" class="cta-button" style="margin: 10px 0; display: inline-block;">ej.uz/rtk-90-ekskursijas</a>
+                        <br><br>
+                        
+                        <div class="time">18:00</div>
+                        Ierašanās un reģistrācija salidojumam Braslas ielā 16
+                        <br><br>
+                        
+                        <div class="time">18:30</div>
+                        Svinīgā salidojuma atklāšana, uzrunas
+                        <br><br>
+                        
+                        <div class="time">19:30</div>
+                        Dzīvās mūzikas priekšnesums un absolventu uzstāšanās
+                        <br><br>
+                        
+                        <div class="time">21:00–02:00</div>
+                        Mūzika, dejas, sarunas un nebeidzamas atmiņas
+                    </div>
                 </div>
-            </div>
-
-            <div class="program-item">
-                <div class="program-icon">ICON</div>
-                <div class="program-time">18:00</div>
-                <div class="program-desc">Ierašanās un reģistrācija salidojumam Braslas ielā 16</div>
-            </div>
-
-            <div class="program-item">
-                <div class="program-icon">ICON</div>
-                <div class="program-time">18:30</div>
-                <div class="program-desc">Svinīgā salidojuma atklāšana, uzrunas</div>
-            </div>
-
-            <div class="program-item">
-                <div class="program-icon">ICON</div>
-                <div class="program-time">19:30</div>
-                <div class="program-desc">Dzīvās mūzikas priekšnesums un absolventu uzstāšanās</div>
-            </div>
-
-            <div class="program-item">
-                <div class="program-icon">ICON</div>
-                <div class="program-time">21:00 – 02:00</div>
-                <div class="program-desc">Mūzika, dejas, sarunas un nebeidzamas atmiņas</div>
             </div>
         </div>
 
@@ -983,7 +1053,7 @@
 
         // Apply animation to elements
         document.addEventListener('DOMContentLoaded', () => {
-            const animateElements = document.querySelectorAll('.price-card, .program-item, .info-item, .homework-list li');
+            const animateElements = document.querySelectorAll('.price-card, .program-timeline, .info-item, .homework-list li');
             
             animateElements.forEach(el => {
                 el.style.opacity = '0';
@@ -993,10 +1063,6 @@
             });
 
             // Add staggered animation delay
-            document.querySelectorAll('.program-item').forEach((item, index) => {
-                item.style.transitionDelay = `${index * 0.1}s`;
-            });
-
             document.querySelectorAll('.info-item').forEach((item, index) => {
                 item.style.transitionDelay = `${index * 0.15}s`;
             });
