@@ -204,9 +204,8 @@
         .hero-address {
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 15px;
-            font-size: 1.2rem;
+            gap: 20px;
+            font-size: 45px;
             font-weight: 700;
             color: #01314b;
             margin-bottom: 30px;
@@ -217,8 +216,8 @@
         }
 
         .location-icon {
-            width: 30px;
-            height: 30px;
+            width: 20px;
+            height: 20px;
             background: #669cbc;
             border-radius: 50%;
             display: flex;
@@ -226,16 +225,8 @@
             justify-content: center;
             color: white;
             font-size: 12px;
-            flex-shrink: 0;
         }
 
-        .location-icon img {
-            width: 20px;
-            height: 20px;
-            object-fit: contain;
-        }
-
-        /* Red callout text positioned at bottom of hero section */
         .hero-callout {
             grid-column: 1 / -1;
             background: linear-gradient(135deg, #c1111f, #7a0102);
@@ -287,6 +278,8 @@
         .history-visual-placeholder {
             width: 100%;
             max-width: 800px;
+            background: rgba(102, 156, 188, 0.05);
+            border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -296,26 +289,29 @@
         .history-image {
             width: 100%;
             height: auto;
-            max-height: 600px;
+            max-height: 700px;
             object-fit: contain;
         }
 
         .history-additional-images {
             display: flex;
-            gap: 30px;
+            gap: 20px;
             margin: 30px 0;
-            justify-content: space-between;
+            justify-content: center;
             align-items: flex-start;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .history-image-left {
-            flex: 0 0 672px;
-            max-width: 672px;
+            flex: 0 0 55%;
+            max-width: 55%;
         }
 
         .history-image-right {
-            flex: 0 0 433px;
-            max-width: 433px;
+            flex: 0 0 40%;
+            max-width: 40%;
         }
 
         .history-text {
@@ -394,12 +390,12 @@
 
         .program-timeline {
             position: relative;
-            padding: 20px 0 20px 40px;
+            padding: 20px 0 20px 30px;
         }
 
         .timeline-line {
             position: absolute;
-            left: 20px;
+            left: 0;
             top: 0;
             bottom: 0;
             width: 3px;
@@ -425,7 +421,7 @@
         .program-text .time::before {
             content: '';
             position: absolute;
-            left: -30px;
+            left: -50px;
             top: 50%;
             transform: translateY(-50%);
             width: 12px;
@@ -504,6 +500,7 @@
             border: 2px solid rgba(102, 156, 188, 0.2);
             box-shadow: 0 12px 40px rgba(1, 49, 75, 0.1);
             position: relative;
+            text-align: center;
         }
 
         .tickets-section-icon {
@@ -522,20 +519,19 @@
             font-size: 2.5rem;
             font-weight: 400;
             margin-bottom: 35px;
-            margin-left: 160px;
             color: #c1111f;
             text-shadow: 0 2px 4px rgba(122, 1, 2, 0.2);
         }
 
         .tickets-content {
-            margin-left: 160px;
+            margin: 0 auto;
         }
 
         .pricing-section {
             display: flex;
             gap: 30px;
             margin: 40px 0;
-            justify-content: flex-start;
+            justify-content: center;
             align-items: center;
         }
 
@@ -652,14 +648,14 @@
             display: inline-block;
             background: linear-gradient(135deg, #c1111f, #7a0102);
             color: #ffffff;
-            padding: 12px 25px;
+            padding: 18px 40px;
             border-radius: 25px;
             text-decoration: none;
             font-weight: 600;
             margin: 8px;
             transition: all 0.3s ease;
             border: 2px solid transparent;
-            font-size: 0.9rem;
+            font-size: 1.1rem;
         }
 
         .cta-button:hover {
@@ -1013,10 +1009,10 @@
             </div>
             <div class="history-additional-images">
                 <div class="history-image-left">
-                    <img src="rtk_prieksa.png" alt="Vēsture 1" style="width: 100%; height: 672px; object-fit: cover; border-radius: 10px;">
+                    <img src="rtk_prieksa.png" alt="Vēsture 1" style="width: 100%; height: 400px; object-fit: cover; border-radius: 10px;">
                 </div>
                 <div class="history-image-right">
-                    <img src="rtk_pagalms.png" alt="Vēsture 2" style="width: 100%; height: 433px; object-fit: cover; border-radius: 10px;">
+                    <img src="rtk_pagalms.png" alt="Vēsture 2" style="width: 100%; height: 400px; object-fit: cover; border-radius: 10px;">
                 </div>
             </div>
             <div class="history-text">
@@ -1038,7 +1034,7 @@
                 <div class="program-timeline">
                     <div class="timeline-line"></div>
                     <div class="program-text">
-                        <div class="time">15:00—18:00</div>
+                        <div class="time">15:00–18:00</div>
                         <strong>BEZMAKSAS ieeja</strong>, ekskursijas pa abām mājām - pieteikšanās atsevišķi, aizpildot anketu: 
                         <a href="https://docs.google.com/forms/d/e/1FAIpQLScqs0udPfhgbpAV6DWzXlZjPEUjt0y_Ji_D6VZBer3g-zzJkA/viewform">ej.uz/rtk-90-ekskursijas</a>
                         <br><br>
@@ -1055,7 +1051,7 @@
                         Dzīvās mūzikas priekšnesums un absolventu uzstāšanās
                         <br><br>
                         
-                        <div class="time">21:00—02:00</div>
+                        <div class="time">21:00–02:00</div>
                         Mūzika, dejas, sarunas un nebeidzamas atmiņas
                     </div>
                 </div>
@@ -1082,7 +1078,7 @@
                     <strong>3. Izvēlēties cikos ierasties, jo pasākums notiek divās daļās:</strong>
                     <br>
                     • 15:00-18:00 ekskursijas, kam jāpieteicās aizpildot šo anketu - 
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScqs0udPfhgbpAV6DWzXlZjPEUjt0y_Ji_D6VZBer3g-zzJkA/viewform" class="cta-button" style="margin: 5px 0; display: inline;">ej.uz/rtk-90-ekskursijas</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScqs0udPfhgbpAV6DWzXlZjPEUjt0y_Ji_D6VZBer3g-zzJkA/viewform" >ej.uz/rtk-90-ekskursijas</a>
                     <br>
                     • un salidojums 18:00-02:00, pērkot biļetes ekase.lv
                 </div>
@@ -1107,7 +1103,7 @@
                     Ieeja ar derīgu elektronisku vai izdrukātu ieejas karti.<br>
                     Dalība RTK absolventiem, skolotājiem un darbiniekiem.
                 </div>
-                <div class="welcome-text" style="text-align: center;">
+                <div class="welcome-text">
                     Skolas absolventiem 70+ gadu vecumā un skolotājiem — ieeja ar ielūgumiem:
                 </div>
                 <div style="text-align: center;">
